@@ -7,17 +7,17 @@ export default function AbsentsList() {
     const { absents } = useContext(AbsentsContext)
 
     return (
-        <div className="flex-1">
+        <div className="flex-1 p-20">
             <p className="font-bold">Liste des absents</p>
-            <ul>
+            <ul className="flex flex-col gap-5 mt-5 list-disc list-inside">
                 {
                     absents
                         .filter(absent => absent.gender === "man")
                         .map((absent, index) => (<Absent key={index} absent={absent} />))
                 }
             </ul>
-            <p className="font-bold">Liste des absentes</p>
-            <ul>
+            <p className="font-bold mt-10">Liste des absentes</p>
+            <ul className="flex flex-col gap-5 mt-5 list-disc list-inside">
                 {
                     absents
                         .filter(absent => absent.gender === "woman")
@@ -33,14 +33,16 @@ function Absent({ absent }) {
     const { removeAbsent } = useContext(AbsentsContext)
 
     return (
-        <li className="flex flex-row items-center gap-2">
-            <span>{absent.name}</span>
-            <button
-                className="w-6 h-6 bg-dark-gray rounded-full flex items-center justify-center"
-                onClick={() => removeAbsent(absent)}
-            >
-                <img src={Cross} className="w-2 h-2" />
-            </button>
+        <li className="list-item">
+            <div className="inline-flex gap-2">
+                <span className="font-bold">{absent.name}</span>
+                <button
+                    className="w-6 h-6 bg-dark-gray rounded-full flex items-center justify-center"
+                    onClick={() => removeAbsent(absent)}
+                >
+                    <img src={Cross} className="w-2 h-2" />
+                </button>
+            </div>
         </li>
     )
 }

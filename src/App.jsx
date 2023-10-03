@@ -31,10 +31,6 @@ export default function App() {
         setAbsents(absents.filter((a) => a.name !== absent.name));
     }
 
-    useEffect(() => {
-        console.log("ABSENTS", absents);
-    }, [absents])
-
     return (
         <AbsentsContext.Provider value={{ absents, addAbsent, removeAbsent }}>
             <RouterProvider router={router} />
