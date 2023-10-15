@@ -1,5 +1,5 @@
 export default function Separator() {
     return (
-        <div className="h-full w-0.5 bg-dark-gray"></div>
+        <div className="md:h-full md:w-0.5 h-0.5 w-full bg-dark-gray"></div>
     )
 }

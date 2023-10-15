@@ -25,7 +25,7 @@ export default function Draw() {
     }, [winners])
 
     return (
-        <div className="flex-1 flex flex-col items-center justify-center gap-10">
+        <div className="flex-1 flex flex-col items-center justify-center gap-10 p-5">
             <Button text={"🎰 Sélectionner une personne 🎰"} onClick={handleDrawWinner} />
             <DrawResult winner={winner} />
         </div>

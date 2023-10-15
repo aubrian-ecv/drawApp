@@ -5,7 +5,7 @@ const genderPhrases = {
 
 export default function DrawResult({ winner }) {
     return (
-        <div className="bg-white flex flex-col items-center justify-center w-2/3 py-44 text-lg">
+        <div className="bg-white flex flex-col items-center justify-center text-center md:text-right w-11/12 md:w-2/3 py-44 text-lg">
             {
                 winner ? (
                     <>
